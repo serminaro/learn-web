@@ -1,0 +1,253 @@
+@import url("variables.css");
+
+/* =============================================================================
+   Reset minimo
+   ============================================================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* =============================================================================
+   Base
+   ============================================================================= */
+body {
+  font-family: var(--font-serif);
+  font-size: var(--fs-base);
+  line-height: 1.65;
+  color: var(--color-text);
+  background: var(--color-bg);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: var(--width-content);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* =============================================================================
+   Header
+   ============================================================================= */
+.site-header {
+  border-bottom: var(--border-thin);
+  padding: var(--space-md) 0;
+  margin-bottom: var(--space-lg);
+}
+
+.site-header__inner {
+  max-width: var(--width-wide);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.site-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: var(--fs-large);
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+
+/* =============================================================================
+   Navegação
+   ============================================================================= */
+.site-nav ul {
+  display: flex;
+  gap: var(--space-md);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  font-family: var(--font-sans);
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.site-nav a:hover,
+.site-nav a:focus,
+.site-nav a[aria-current="page"] {
+  color: var(--color-accent);
+}
+
+/* =============================================================================
+   Cabecalhos
+   ============================================================================= */
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  line-height: 1.2;
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+}
+
+h1 {
+  font-size: var(--fs-2xl);
+  font-weight: normal;
+  margin-top: var(--space-md);
+}
+
+h2 {
+  font-size: var(--fs-xl);
+  font-weight: normal;
+}
+
+h3 {
+  font-size: var(--fs-large);
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* =============================================================================
+   Texto corrente
+   ============================================================================= */
+p {
+  margin: 0 0 var(--space-sm);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-accent-hover);
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  background: var(--color-surface);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+
+.lead {
+  font-size: var(--fs-medium);
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-bottom: var(--space-lg);
+  line-height: 1.55;
+}
+
+/* =============================================================================
+   Cards (sem flex tradicional, em grid)
+   ============================================================================= */
+.card-grid {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: 1fr;
+  margin: var(--space-md) 0;
+}
+
+.card {
+  padding: var(--space-md);
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  border: var(--border-thin);
+}
+
+.card h3 {
+  margin-top: 0;
+  font-style: normal;
+  font-size: var(--fs-medium);
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+/* =============================================================================
+   Listas
+   ============================================================================= */
+ul.plain {
+  list-style: none;
+  padding-left: 0;
+  margin: var(--space-sm) 0;
+}
+
+ul.plain li {
+  padding: var(--space-xs) 0;
+  border-bottom: var(--border-thin);
+}
+
+ul.plain li:last-child {
+  border-bottom: none;
+}
+
+/* Lista de definição usada na pagina de contato */
+.contato dt {
+  font-family: var(--font-sans);
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin-top: var(--space-md);
+}
+
+.contato dd {
+  margin: 0;
+  font-size: var(--fs-medium);
+}
+
+/* =============================================================================
+   Footer
+   ============================================================================= */
+.site-footer {
+  margin-top: var(--space-xl);
+  padding: var(--space-md) 0;
+  border-top: var(--border-thin);
+  font-family: var(--font-sans);
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+.site-footer .container {
+  max-width: var(--width-wide);
+}
+
+/* =============================================================================
+   Responsivo
+   ============================================================================= */
+@media (min-width: 640px) {
+  .card-grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  .site-header__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-nav ul {
+    gap: var(--space-sm);
+  }
+}
