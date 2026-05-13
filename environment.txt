@@ -1,0 +1,16 @@
+# Versões locais validadas em 2026-05-13
+# Não é arquivo executável — é referência de ambiente
+
+PHP=8.3.6
+Composer=2.7.1
+Node=18.19.1
+npm=9.2.0
+Nginx=1.24.0 (Ubuntu)
+Go=1.22.2 (opcional, fora do escopo desta SPEC-002)
+
+# Servidor de desenvolvimento usado neste projeto:
+#   nginx em localhost:8080, config em /etc/nginx/sites-available/learn-web
+#   php-fpm via socket /run/php/php8.3-fpm.sock
+
+# Sistema:
+#   Ubuntu 24.04, kernel 6.17.0-23-generic

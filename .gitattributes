@@ -1,0 +1,12 @@
+# Normaliza fim de linha pra LF em arquivos de texto
+* text=auto eol=lf
+
+# Binarios — nao alterar
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg text
+*.pdf binary
+*.docx binary
+*.xlsx binary
